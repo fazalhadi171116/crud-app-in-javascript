@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            /* RESET & BASIC STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+:root {
+  --white: #fff;
+  --darkblue: #1b4965;
+  --lightblue: #edf2f4;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 50px 0 150px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+.showdata-btn{
+    background:rgb(51, 168, 51);
+    border: none;
+    padding: 8px 16px ;
+    cursor: pointer;
+    color:white
+}
+.showdata-btn1{
+    background:rgb(240, 85, 85);
+    border: none;
+    padding: 8px 16px ;
+    cursor: pointer;
+    color:white
+}
+
+/* TABLE STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: var(--darkblue);
+  border-radius: 40px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: var(--white);
+  border-radius: 40px;
+}
+
+.table-wrapper table {
+  margin: 50px 0 20px;
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+}
+
+.table-wrapper table th,
+.table-wrapper table td {
+  padding: 10px;
+  min-width: 75px;
+}
+
+.table-wrapper table th {
+  color: var(--white);
+  background: var(--darkblue);
+}
+
+.table-wrapper table tbody tr:nth-of-type(even) > * {
+  background: var(--lightblue);
+}
+
+.table-wrapper table td:first-child {
+  text-align: left;
+}
+
+.table-credits {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* FOOTER STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-footer {
+  position: fixed;
+  right: 0;
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  z-index: 1;
+  background: var(--white);
+}
+
+.page-footer a {
+  display: flex;
+  margin-left: 4px;
+}
+.tbale-heading{
+    
+    display: flex;
+    justify-content: space-between;
+}
+.tbale-heading button{
+    background-color: rgb(159, 159, 248);
+    padding: 12px 25px;
+    color:white;
+    border: none;
+    cursor: pointer;
+}
+
+        </style>
+    </head>
+    <body onload="displatData()">
+      
+           <div class="container">
+           <div class="tbale-heading">
+            <h1>Students Record</h1>
+            <button onclick="homePage()">Add New Data</button>
+           </div>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Address</th>
+                    <th>Operations</th>
+                  </tr>
+                </thead>
+                <tbody id="showData-in-Table">
+                 
+                </tbody>
+              </table>
+            </div>
+          
+          </div>
+<!-- 
+          <form>
+            <input type="text" id="fullName">
+          </form> -->
+         
+           <script src="index.js"></script>
+    </body>
+</html>
